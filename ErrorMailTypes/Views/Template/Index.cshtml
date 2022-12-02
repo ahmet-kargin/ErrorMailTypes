@@ -1,0 +1,125 @@
+﻿@model ErrorMailTypes.Models.MailDto
+
+@{
+    ViewData["Title"] = "Mail Add";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+<div class="row">
+    <div class="col-md-12">
+        <form id="saveId" asp-controller="Template" asp-action="Save" method="post" enctype="multipart/form-data">
+            <div class="d-flex mt-3">
+
+                <div asp-validation-summary="ModelOnly" method="post"></div>
+
+                <div class="form-group mb-3 flex-lg-row">
+                    <select id="select" asp-for="MailType">
+                        <option value="" selected disabled>--Select Error Type--</option>
+                        <option value="Token Is Not Valid">Token Is Not Valid</option>
+                        <option value="Attachment Is Not Valid">Attachment Is Not Valid</option>
+                        <option value="Successfully">Successfully</option>
+                    </select>
+                    <span asp-validation-for="MailType" class=""></span>
+                </div>
+                <div class="flex-row-reverse mb-3" style="margin-left:80%;">
+                    <button class="btn btn-sm btn-success  text-center" style="width:60px; height:30px;" type="submit" id="btnSave">
+                        <i class="fa fa-dot-circle-o"></i> Save
+                    </button>&nbsp;
+                </div>
+            </div>
+            <input type="text" id="mytextarea" class="col-12" asp-for="MailBody" />
+        </form>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#select").change(function (e) {
+            var selectedItem = $("#select").val();
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Get", "Template")",
+                data: { data: selectedItem },
+                dataType: "json",
+                success: function (rslt) {
+                    tinymce.get("mytextarea").setContent(rslt);
+                },
+                error: function (rslt) {
+                    alert('Error');
+                }
+            });
+        });
+               
+    });
+</script>
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+    tinymce.init({
+        selector: '#mytextarea',
+        plugins: [
+            'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
+            'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+            'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount'
+        ],
+        toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+            'alignleft aligncenter alignright alignjustify | ' +
+            'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+    });
+</script>
+
+@*<script>
+    let form;
+    let action;
+
+    function findElements() {
+        form = document.querySelector('form');
+        ({ action } = form);
+    }
+    
+    function onSuccess(response) {
+        return response.json().then(showMessage);
+    }
+
+    function onError(data) {
+        console.error(data);
+    }
+
+    function collectData(currentForm) {
+        const data = new FormData(currentForm);
+        return data;
+    }
+
+    function setOptions(currentForm) {
+        return {
+            method: 'post',
+            body: collectData(currentForm),
+        };
+    }
+
+    function sendForm(currentForm) {
+        return fetch(action, setOptions(currentForm));
+    }
+
+    function onSubmit(event) {
+        event.preventDefault();
+        const { currentTarget } = event;
+        sendForm(currentTarget)
+            .then(response => onSuccess(response, currentTarget))
+            .catch(onError);
+    }
+
+    function subscribe() {
+        form.addEventListener('submit', onSubmit);
+    }
+
+    function init() {
+        findElements();
+        subscribe();
+    }
+
+    init();
+</script>*@

@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MailBody" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"&gt;&lt;head&gt;
+    &lt;title&gt; Error Email &lt;/title&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;style type="text/css"&gt;
+      #outlook a {
+        padding: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        border-collapse: collapse;
+      }
+      img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+      p {
+        display: block;
+        margin: 13px 0;
+      }
+    &lt;/style&gt;
+       &lt;link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&amp;amp;display=swap" rel="stylesheet" type="text/css" /&gt;
+    &lt;style type="text/css"&gt;
+      @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&amp;amp;display=swap);
+    &lt;/style&gt;
+    &lt;style type="text/css"&gt;
+      @media only screen and (min-width:480px) {
+        .mj-column-per-100 {
+          width: 100% !important;
+          max-width: 100%;
+        }
+      }
+    &lt;/style&gt;
+    &lt;style type="text/css"&gt;
+      @media only screen and (max-width:480px) {
+        table.mj-full-width-mobile {
+          width: 100% !important;
+        }
+        td.mj-full-width-mobile {
+          width: auto !important;
+        }
+      }
+    &lt;/style&gt;
+    &lt;style type="text/css"&gt;
+      a,
+      span,
+      td,
+      th {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  
+  &lt;body style="background-color:white;"&gt;
+      &lt;div style="background-color:white; font-family:Poppins, Helvetica, Arial, sans-serif;font-size:20px;font-weight:300;line-height:30px; margin-left: 35px; margin-top: 35px;"&gt;
+        &lt;strong&gt;From:&lt;/strong&gt;&lt;span&gt;{email.From}&lt;/span&gt;&lt;br&gt;
+        &lt;strong&gt;To:&lt;/strong&gt;&lt;span&gt;{email.To}&lt;/span&gt;&lt;br&gt;
+        &lt;strong&gt;Subject:&lt;/strong&gt;&lt;span&gt;{email.Subject}&lt;/span&gt;&lt;br&gt;
+        &lt;strong&gt;File Name:&lt;/strong&gt;&lt;span&gt;{s3Item.Key}&lt;/span&gt;&lt;br&gt;
+        &lt;strong&gt;Date:&lt;/strong&gt;&lt;span&gt;{email.Date}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div style="background:#ffffff;background-color:#ffffff;margin:0px auto;border-radius:0 0 4px 4px;max-width:100%;"&gt;
+        &lt;table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;border-radius:0 0 4px 4px;"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="direction:ltr;font-size:0px;padding:40px 10px;text-align:center;"&gt;
+             
+                &lt;div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"&gt;
+                  &lt;table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"&gt;
+                    &lt;tbody&gt;&lt;tr&gt;
+                      &lt;td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"&gt;
+                        &lt;div style="font-family:Poppins, Helvetica, Arial, sans-serif;font-size:20px;font-weight:300;line-height:30px;text-align:left;color:#003366;"&gt;
+                          &lt;p style="margin: 0;"&gt;Dear {Customer},&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"&gt;
+                        &lt;div style="font-family:Poppins, Helvetica, Arial, sans-serif;font-size:20px;font-weight:300;line-height:30px;text-align:left;color:#003366;"&gt;
+                          &lt;p style="margin: 0;"&gt; Your emailed file has been &lt;span style=color:red&gt;&lt;i&gt;&lt;b&gt;REJECTED&lt;/b&gt;&lt;/i&gt;&lt;/span&gt; for the following reason :&lt;/p&gt;
+                          &lt;p&gt;&lt;strong&gt;Error Type:&lt;/strong&gt;{errorLine}&lt;/p&gt;
+                          &lt;p&gt;We're sorry you encountered the attachment error. Please upload the attachment again.&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"&gt;
+                        &lt;div style="font-family:Poppins, Helvetica, Arial, sans-serif;font-size:20px;font-weight:300;line-height:30px;text-align:left;color:#003366;"&gt;
+                          &lt;p style="margin: 0;"&gt;If you could not upload the file, contact us by clicking the contact button below.&lt;/p&gt;
+                          &lt;p style="font-size: 15px"&gt;Sincerely,&lt;/p&gt;
+                          &lt;p style="font-size: 15px"&gt;Thank you&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;word-break:break-word;"&gt;
+                        &lt;table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;"&gt;
+                          &lt;tbody&gt;&lt;tr&gt;
+                            &lt;td align="center" bgcolor="#043768" role="presentation" style="border:none;border-radius:3px;cursor:auto;background:#043768;" valign="middle"&gt;
+                              &lt;a class="button" href="https://www.redmillsolutions.com/contact/" style="display: inline-block; background: #043768; color: white; font-family: Poppins, Helvetica, Arial, sans-serif; font-size: 18px; font-weight: normal; line-height: 30px; margin: 0; text-decoration: none; text-transform: none; padding: 10px 25px; border-radius: 3px;" target="_blank"&gt;Contact&lt;/a&gt;
+                            &lt;/td&gt;
+                          &lt;/tr&gt;
+                        &lt;/tbody&gt;&lt;/table&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/tbody&gt;&lt;/table&gt;
+                &lt;/div&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;tr&gt;
+        &lt;td"&gt;
+          &lt;img style="height:110px; width: 60%; background-color:important #ffffff ;" src="image010.png"/&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;div style="background:#ffffff url(https://www.transparenttextures.com/patterns/brushed-alum.png) top center / auto repeat;margin:0px auto;border-radius:4px 4px 0 0;max-width:100%;"&gt;
+        &lt;div style="line-height:0;font-size:100;"&gt;
+          &lt;table  background="https://www.transparenttextures.com/patterns/brushed-alum.png" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff url(https://www.transparenttextures.com/patterns/brushed-alum.png) top center / auto repeat;width:100%;border-radius:4px 4px 0 0;"&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td style="direction:ltr;font-size:100px; text-align:left;"&gt;
+                  &lt;div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:100px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"&gt;
+                    &lt;table border="0" cellpadding="0" cellspacing="0" role="presentation" width="600px"&gt;
+                      &lt;tbody&gt;
+                        &lt;tr&gt;
+                          &lt;td style="vertical-align:top;padding:40px;"&gt;
+                            &lt;table border="0" cellpadding="0" cellspacing="0" role="presentation"  width="100%"&gt;
+                              &lt;tbody&gt;&lt;tr&gt;
+                                &lt;td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"&gt;
+                                  &lt;table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"&gt;
+                                    &lt;tbody&gt;
+                                      &lt;tr&gt;
+                                        &lt;td"&gt;
+                                          &lt;img style="height:60px; width: 250px;" src="https://tuktuk.redmillsolutions.com/images/redmilllogo.png"/&gt;
+                                        &lt;/td&gt;     
+                                      &lt;/tr&gt;
+                                    &lt;/tbody&gt;
+                                  &lt;/table&gt;
+                                &lt;/td&gt;
+                              &lt;/tr&gt;
+                            &lt;/tbody&gt;&lt;/table&gt;
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+                      &lt;/tbody&gt;
+                    &lt;/table&gt;
+                  &lt;/div&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;        
+        &lt;div style="color:black; font-size:75%; margin: -15px 30px 0px 30px;"&gt;
+          &lt;u&gt;Statement of Confidentiality&lt;/u&gt;&lt;br&gt;
+          &lt;span&gt;This email and attachments may contain information that is confidential, legally privileged or otherwise protected from disclosure. This transmission is sent in trust, for the sole purpose of delivery to the intended recipient. If you have received this email in error, you are not entitled to copy, disclose, distribute, print, or rely on this email in any way  If you are not the intended recipient, please immediately notify the sender by reply e-mail&amp;nbsp;or phone&amp;nbsp;and&amp;nbsp;delete this email and its attachments (if any) from your system. Redmill Solutions Limited is a private limited company, registered in England and Wales, with the registration number 07193163 and its registered office located at Calleo House, 49 Theobald Street, Borehamwood, WD6 4RT 
+          &lt;/span&gt;
+        &lt;/div&gt;  
+      &lt;/div&gt;
+  &lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+</root>
