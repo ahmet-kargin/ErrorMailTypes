@@ -8,32 +8,26 @@
 
 <div class="row">
     <div class="col-md-12">
-        <form id="saveId" asp-controller="Template" asp-action="Save" method="post" enctype="multipart/form-data">
-            <div class="d-flex mt-3">
-
-                <div asp-validation-summary="ModelOnly" method="post"></div>
-
-                <div class="form-group mb-3 flex-lg-row">
-                    <select id="select" asp-for="MailType">
-                        <option value="" selected disabled>--Select Error Type--</option>
-                        <option value="Token Is Not Valid">Token Is Not Valid</option>
-                        <option value="Attachment Is Not Valid">Attachment Is Not Valid</option>
-                        <option value="Successfully">Successfully</option>
-                    </select>
-                    <span asp-validation-for="MailType" class=""></span>
-                </div>
-                <div class="flex-row-reverse mb-3" style="margin-left:80%;">
-                    <button class="btn btn-sm btn-success  text-center" style="width:60px; height:30px;" type="submit" id="btnSave">
-                        <i class="fa fa-dot-circle-o"></i> Save
-                    </button>&nbsp;
-                </div>
+        <div class="d-flex mt-3">
+            <div asp-validation-summary="ModelOnly" method="post"></div>
+            <div class="form-group mb-3 flex-lg-row">
+                <select class="form-select" style="width:300px" id="select" asp-for="MailType">
+                    <option value="" selected disabled>--Select Error Type--</option>
+                    <option value="Token Is Not Valid">Token Is Not Valid</option>
+                    <option value="Attachment Is Not Valid">Attachment Is Not Valid</option>
+                    <option value="Successfully">Successfully</option>
+                </select>
+                <span asp-validation-for="MailType" class=""></span>
             </div>
-            <input type="text" id="mytextarea" class="col-12" asp-for="MailBody" />
-        </form>
-
+            <div class="flex-row-reverse mb-3" style="margin-left:70%">
+                <button class="btn btn-sm btn-success text-center" type="submit" style="width:75px; height:35px;" id="btnSave">
+                    <i class="fa fa-dot-circle-o"></i> Save
+                </button>&nbsp;
+            </div>
+        </div>
+        <input type="text" id="mytextarea" class="col-12" asp-for="MailBody" />
     </div>
 </div>
-
 <script>
     $(document).ready(function () {
         $("#select").change(function (e) {
@@ -51,7 +45,21 @@
                 }
             });
         });
-               
+        $("#btnSave").click(function (e) {
+            var templateId = $('#select option:selected').val();
+            var templateBody = tinymce.get("mytextarea").getContent();
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Save", "Template")",
+                data: { MailType: templateId, MailBody: templateBody },
+                success: function (rslt) {
+                    tinymce.get("mytextarea").getContent(rslt);
+                },
+                error: function (rslt) {
+                    alert('Error');
+                }
+            });
+        });
     });
 </script>
 
@@ -79,7 +87,7 @@
         form = document.querySelector('form');
         ({ action } = form);
     }
-    
+
     function onSuccess(response) {
         return response.json().then(showMessage);
     }
