@@ -32,7 +32,6 @@ namespace ErrorMailTypes.Controllers
                 var result = _templateService.GetByType(model.MailType);
                 if (result !=null)
                 {
-
                     if (result.MailType !=null)
                     {
                         model = _templateService.Update(model);
@@ -55,7 +54,6 @@ namespace ErrorMailTypes.Controllers
         {
             try
             {
-                //model = _templateService.Get();
                 var model = _templateService.GetByType(data);
                 if (model != null && model.MailBody!=null) {
                     return Json(model.MailBody);

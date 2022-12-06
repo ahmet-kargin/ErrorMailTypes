@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddSingleton<ITemplateService, TemplateService>();
+builder.Services.AddScoped<ITemplateService, TemplateService>();
 
 builder.Services.AddDbContext<MailTypesContext>();
 
