@@ -1,6 +1,7 @@
 ﻿using ErrorMailTypes.Models;
 using ErrorMailTypes.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
@@ -10,12 +11,16 @@ namespace ErrorMailTypes.Controllers
     public class TemplateController : Controller
     {
         private readonly ITemplateService _templateService;
-        public TemplateController(ITemplateService templateService)
+        private readonly MailTypesContext _mailTypesContext;
+        public TemplateController(ITemplateService templateService, MailTypesContext mailTypesContext )
         {
             _templateService = templateService;
+            _mailTypesContext = mailTypesContext;
         }
-        public IActionResult Index()
-        {
+        public  IActionResult Index()
+         {
+            //List<MailDto> mailDto = new List<MailDto>();
+            ViewBag.Template =  _mailTypesContext.MailTypes.ToList();
             return View();
         }
         
@@ -42,6 +47,7 @@ namespace ErrorMailTypes.Controllers
             {
                 throw ex;
             }
+            ViewBag.MailType = model.MailType;
             return RedirectToAction(nameof(TemplateController.Index));
         }
         [HttpPost]
