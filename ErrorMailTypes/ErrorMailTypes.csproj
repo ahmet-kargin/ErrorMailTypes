@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="MailType\**" />
     <Compile Remove="Resources\**" />
     <Compile Remove="Views\Email\**" />
+    <Content Remove="MailType\**" />
     <Content Remove="Resources\**" />
     <Content Remove="Views\Email\**" />
+    <EmbeddedResource Remove="MailType\**" />
     <EmbeddedResource Remove="Resources\**" />
     <EmbeddedResource Remove="Views\Email\**" />
+    <None Remove="MailType\**" />
     <None Remove="Resources\**" />
     <None Remove="Views\Email\**" />
   </ItemGroup>

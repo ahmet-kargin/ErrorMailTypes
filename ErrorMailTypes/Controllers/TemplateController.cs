@@ -24,17 +24,9 @@ namespace ErrorMailTypes.Controllers
         {
             try
             {
-                var result = _templateService.GetByType(model.MailType);
-                if (result != null)
+                if (model != null)
                 {
-                    if (result != null)
-                    {
-                        model = _templateService.Update(model);
-                    }
-                    else
-                    {
-                        model = _templateService.Save(model);
-                    }
+                    model = _templateService.Update(model);
                 }
             }
             catch (Exception ex)
