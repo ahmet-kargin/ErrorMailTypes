@@ -1,34 +1,33 @@
 ﻿using ErrorMailTypes.Models;
 using ErrorMailTypes.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Newtonsoft.Json;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ErrorMailTypes.Controllers
 {
     public class TemplateController : Controller
     {
         private readonly ITemplateService _templateService;
-        public TemplateController(ITemplateService templateService)
+        private readonly MailTypesContext _mailTypesContext;
+        public TemplateController(ITemplateService templateService, MailTypesContext mailTypesContext)
         {
             _templateService = templateService;
+            _mailTypesContext = mailTypesContext;
         }
         public IActionResult Index()
         {
+            ViewBag.Template = _mailTypesContext.MailTypes.ToList();
             return View();
         }
-        
+
         [HttpPost]
         public IActionResult Save(MailDto model)
         {
             try
             {
                 var result = _templateService.GetByType(model.MailType);
-                if (result !=null)
+                if (result != null)
                 {
-
-                    if (result !=null)
+                    if (result != null)
                     {
                         model = _templateService.Update(model);
                     }
@@ -42,16 +41,17 @@ namespace ErrorMailTypes.Controllers
             {
                 throw ex;
             }
+            ViewBag.MailType = model.MailType;
             return RedirectToAction(nameof(TemplateController.Index));
         }
         [HttpPost]
-        public JsonResult Get(string data) 
+        public JsonResult Get(string data)
         {
             try
             {
-                //model = _templateService.Get();
                 var model = _templateService.GetByType(data);
-                if (model != null ) {
+                if (model != null)
+                {
                     return Json(model);
                 }
             }
@@ -61,6 +61,6 @@ namespace ErrorMailTypes.Controllers
             }
             return Json("");
         }
-               
+
     }
 }
