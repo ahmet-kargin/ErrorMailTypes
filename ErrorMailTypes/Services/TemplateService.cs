@@ -21,13 +21,13 @@ namespace ErrorMailTypes.Services
         }
         public string GetByType(string type)
         {
-            MailType selectedTemplate = _context.MailTypes.FirstOrDefault(t => t.MailType1 == type);
+            Template selectedTemplate = _context.MailTypes.FirstOrDefault(t => t.MailType == type);
 
             return selectedTemplate.MailBody;
         }
         public MailDto Update(MailDto model)
         {
-            var data = _context.MailTypes.Where(x => x.MailType1 == model.MailType).SingleOrDefault();
+            var data = _context.MailTypes.Where(x => x.MailType == model.MailType).SingleOrDefault();
             _context?.Entry(data).CurrentValues.SetValues(model);
             _context?.SaveChanges();
             return model;

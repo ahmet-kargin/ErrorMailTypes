@@ -11,16 +11,15 @@
         <div class="d-flex mt-3">
             <div asp-validation-summary="ModelOnly" method="post"></div>
             <div class="form-group mb-3 flex-lg-row">
-                <select class="form-select" style="width:300px" id="select" asp-for="MailType">
+                <select class="form-select" style="width:300px" id="select">
                     <option value="" selected disabled>--Select Error Type--</option>
                     @foreach (var item in ViewBag.Template)
                     {
-                        <option value="@item.MailType1">
-                            @item.MailType1
+                        <option value="@item.MailType">
+                            @item.MailType
                         </option>
                     }
                 </select>
-                <span asp-validation-for="MailType" class=""></span>
             </div>
             <div class="flex-row-reverse mb-3" style="margin-left:70%">
                 <button class="btn btn-sm btn-success text-center" type="button" style="width:75px; height:35px;" id="btnSave">
@@ -28,7 +27,7 @@
                 </button>&nbsp;
             </div>
         </div>
-        <input type="text" id="mytextarea" class="col-12" asp-for="MailBody" />
+        <input type="text" id="mytextarea" class="col-12"/>
     </div>
 </div>
 <script>
@@ -81,5 +80,3 @@
             'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
     });
 </script>
-
-

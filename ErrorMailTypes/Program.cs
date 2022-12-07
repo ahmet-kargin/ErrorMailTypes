@@ -1,4 +1,3 @@
-using ErrorMailTypes;
 using ErrorMailTypes.Models;
 using ErrorMailTypes.Services;
 using Microsoft.EntityFrameworkCore;
