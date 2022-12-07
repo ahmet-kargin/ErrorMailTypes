@@ -45,42 +45,40 @@ namespace ErrorMailTypes.Services
             _context.SaveChanges();
             return model;
         }
-        public MailDto GetByType(string type)
+        public string GetByType(string type)
         {
-            SqlConnection sqlConnection = new SqlConnection(_config.GetConnectionString("Connection"));
-            MailDto model = new MailDto();
-            try
-            {
-                sqlConnection.Open();
-                string sql = "SELECT*FROM [dbo].[MailType] WHERE MailType = '" + type + "'";
-                sqlCommand = new SqlCommand(sql, sqlConnection);
-                SqlDataReader reader = sqlCommand.ExecuteReader();
+            #region old technology
+            //SqlConnection sqlConnection = new SqlConnection(_config.GetConnectionString("Connection"));
+            //MailDto model = new MailDto();
+            //try
+            //{
+            //    sqlConnection.Open();
+            //    string sql = "SELECT*FROM [dbo].[MailType] WHERE MailType = '" + type + "'";
+            //    sqlCommand = new SqlCommand(sql, sqlConnection);
+            //    SqlDataReader reader = sqlCommand.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    model.id = (int)Convert.ToInt64(reader["MailTypeId"]);
-                    model.MailType = WebUtility.HtmlDecode(reader["MailType"].ToString());
-                    model.MailBody = WebUtility.HtmlDecode(reader["MailBody"].ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                sqlCommand.Dispose();
-                sqlConnection.Close();
-            }
-            return model;
-            //var template = _context.MailTypes.Where(t => t.MailType1 == type).
-            //    Select(t => new MailDto()
+            //    while (reader.Read())
             //    {
-            //        id = t.MailTypeId,
-            //        MailType = t.MailType1,
-            //        MailBody = t.MailBody
-            //    });
-            //return template;
+            //        model.id = (int)Convert.ToInt64(reader["MailTypeId"]);
+            //        model.MailType = WebUtility.HtmlDecode(reader["MailType"].ToString());
+            //        model.MailBody = WebUtility.HtmlDecode(reader["MailBody"].ToString());
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
+            //finally
+            //{
+            //    sqlCommand.Dispose();
+            //    sqlConnection.Close();
+            //}
+            //return model;
+            #endregion
+
+            MailType selectedTemplate = _context.MailTypes.FirstOrDefault(t => t.MailType1 == type);
+
+            return selectedTemplate.MailBody;
         }
         public MailDto Update(MailDto model)
         {

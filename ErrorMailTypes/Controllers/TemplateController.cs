@@ -32,7 +32,7 @@ namespace ErrorMailTypes.Controllers
                 var result = _templateService.GetByType(model.MailType);
                 if (result !=null)
                 {
-                    if (result.MailType !=null)
+                    if (result !=null)
                     {
                         model = _templateService.Update(model);
                     }
@@ -55,8 +55,8 @@ namespace ErrorMailTypes.Controllers
             try
             {
                 var model = _templateService.GetByType(data);
-                if (model != null && model.MailBody!=null) {
-                    return Json(model.MailBody);
+                if (model != null) {
+                    return Json(model);
                 }
             }
             catch (Exception ex)

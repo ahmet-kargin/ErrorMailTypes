@@ -5,7 +5,7 @@ namespace ErrorMailTypes.Services
     public interface ITemplateService
     {
         MailDto Save(MailDto model);
-        MailDto GetByType(string type);
+       string GetByType(string type);
         MailDto Update(MailDto model);
     }
 }
