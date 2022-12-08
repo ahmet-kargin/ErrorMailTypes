@@ -1,8 +1,4 @@
 ﻿using ErrorMailTypes.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using System.Net;
 
 namespace ErrorMailTypes.Services
 {
