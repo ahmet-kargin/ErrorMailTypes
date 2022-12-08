@@ -33,7 +33,6 @@ namespace ErrorMailTypes.Controllers
             {
                 throw ex;
             }
-            ViewBag.MailType = model.MailType;
             return RedirectToAction(nameof(TemplateController.Index));
         }
         [HttpPost]

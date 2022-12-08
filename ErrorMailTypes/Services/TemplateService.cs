@@ -21,7 +21,8 @@ namespace ErrorMailTypes.Services
                 return selectedTemplate.MailBody;
 
             }
-            else return null;
+            else 
+                return "";
 
 
         }
