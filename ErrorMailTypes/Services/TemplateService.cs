@@ -25,7 +25,11 @@ namespace ErrorMailTypes.Services
                 return "";
         }
         public MailDto Update(MailDto model)
-        {  
+        {
+            if (model.MailType == null)
+            {
+                return null;
+            }
             if (model.MailBody == null)
             {
                 Template selectedTemplate = _context.MailTypes.FirstOrDefault(x => x.MailType == model.MailType);
