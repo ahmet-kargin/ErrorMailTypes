@@ -23,8 +23,6 @@ namespace ErrorMailTypes.Services
             }
             else 
                 return "";
-
-
         }
         public MailDto Update(MailDto model)
         {  
