@@ -9,11 +9,11 @@ namespace ErrorMailTypes.Services
         {
             _context = context;
         }
-        public string GetByType(string type)
+        public  string GetByType(string type)
         {
             if (type != null)
             {
-                Template selectedTemplate = _context.MailTypes.FirstOrDefault(t => t.MailType == type);
+                Template selectedTemplate =_context.MailTypes.FirstOrDefault(t => t.MailType == type);
                 return selectedTemplate.MailBody;
 
             }
