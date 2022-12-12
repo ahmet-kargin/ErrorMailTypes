@@ -1,6 +1,6 @@
-﻿using ErrorMailTypes.Models;
+﻿using TemplateContent.Models;
 
-namespace ErrorMailTypes.Services
+namespace TemplateContent.Services
 {
     public interface ITemplateService
     {

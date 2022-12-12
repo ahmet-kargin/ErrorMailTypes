@@ -1,12 +1,12 @@
-﻿using ErrorMailTypes.Models;
-using ErrorMailTypes.Services;
+﻿using TemplateContent.Models;
+using TemplateContent.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
-namespace ErrorMailTypes.Controllers
+namespace TemplateContent.Controllers
 {
     public class TemplateController : Controller
     {

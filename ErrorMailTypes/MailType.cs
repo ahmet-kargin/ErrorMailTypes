@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ErrorMailTypes;
+namespace TemplateContent;
 
 public partial class MailType
 {

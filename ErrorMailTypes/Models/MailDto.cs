@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ErrorMailTypes.Models
+namespace TemplateContent.Models
 {
     public class MailDto
     {

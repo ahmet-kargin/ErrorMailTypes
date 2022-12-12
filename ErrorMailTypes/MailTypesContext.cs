@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace ErrorMailTypes;
+namespace TemplateContent;
 
 public partial class MailTypesContext : DbContext
 {

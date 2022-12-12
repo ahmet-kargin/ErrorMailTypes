@@ -1,6 +1,6 @@
-using ErrorMailTypes;
-using ErrorMailTypes.Models;
-using ErrorMailTypes.Services;
+using TemplateContent;
+using TemplateContent.Models;
+using TemplateContent.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
