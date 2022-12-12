@@ -16,7 +16,7 @@ public partial class MailTypesContext : DbContext
     public virtual DbSet<Template> MailTypes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MailTypes;Integrated Security=True");
+        => optionsBuilder.UseSqlServer("name=ConnectionStrings:Connection");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
