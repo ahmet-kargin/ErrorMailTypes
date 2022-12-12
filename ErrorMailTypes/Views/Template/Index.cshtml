@@ -1,4 +1,4 @@
-﻿@model ErrorMailTypes.Models.MailDto
+﻿@model EmailTemplate.Models.TemplateDto
 
 @{
     ViewData["Title"] = "Mail Add";
@@ -13,7 +13,7 @@
         <div class="d-flex mt-3 col-4">
             <div class="form-group mb-3 flex-lg-row">
                 <select class="form-select" style="width:330px" id="select">
-                    <option value="" selected disabled>--Select Error Type--</option>
+                    <option value="" selected disabled>--Select Mail Template--</option>
                     @foreach (var item in ViewBag.Template)
                     {
                         <option value="@item.MailType">

@@ -1,14 +1,14 @@
-﻿using ErrorMailTypes.Models;
-using ErrorMailTypes.Services;
+﻿using EmailTemplate.Models;
+using EmailTemplate.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ErrorMailTypes.Controllers
+namespace EmailTemplate.Controllers
 {
     public class TemplateController : Controller
     {
         private readonly ITemplateService _templateService;
-        private readonly MailTypesContext _mailTypesContext;
-        public TemplateController(ITemplateService templateService, MailTypesContext mailTypesContext)
+        private readonly TemplateContext _mailTypesContext;
+        public TemplateController(ITemplateService templateService, TemplateContext mailTypesContext)
         {
             _templateService = templateService;
             _mailTypesContext = mailTypesContext;
@@ -20,7 +20,7 @@ namespace ErrorMailTypes.Controllers
         }
 
         [HttpPost]
-        public IActionResult Save(MailDto model)
+        public IActionResult Save(TemplateDto model)
         {
             try
             {

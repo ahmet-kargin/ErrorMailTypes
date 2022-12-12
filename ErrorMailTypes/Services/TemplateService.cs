@@ -1,11 +1,11 @@
-﻿using ErrorMailTypes.Models;
+﻿using EmailTemplate.Models;
 
-namespace ErrorMailTypes.Services
+namespace EmailTemplate.Services
 {
     public class TemplateService : ITemplateService
     {
-        private readonly MailTypesContext _context;
-        public TemplateService( MailTypesContext context)
+        private readonly TemplateContext _context;
+        public TemplateService( TemplateContext context)
         {
             _context = context;
         }
@@ -20,7 +20,7 @@ namespace ErrorMailTypes.Services
             else 
                 return "";
         }
-        public MailDto Update(MailDto model)
+        public TemplateDto Update(TemplateDto model)
         {
             if (model.MailType == null)
                 return null;

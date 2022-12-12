@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ErrorMailTypes.Models
+namespace EmailTemplate.Models
 {
-    public class MailDto
+    public class TemplateDto
     {
         public int Id { get; set; }
         public string? MailType { get; set; }

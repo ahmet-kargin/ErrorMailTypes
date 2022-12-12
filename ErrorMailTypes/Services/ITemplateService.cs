@@ -1,10 +1,10 @@
-﻿using ErrorMailTypes.Models;
+﻿using EmailTemplate.Models;
 
-namespace ErrorMailTypes.Services
+namespace EmailTemplate.Services
 {
     public interface ITemplateService
     {
         string GetByType(string type);
-        MailDto Update(MailDto model);
+        TemplateDto Update(TemplateDto model);
     }
 }

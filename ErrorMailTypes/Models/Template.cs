@@ -1,4 +1,4 @@
-﻿namespace ErrorMailTypes.Models;
+﻿namespace EmailTemplate.Models;
 
 public class Template
 {

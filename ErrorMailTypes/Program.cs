@@ -1,5 +1,5 @@
-using ErrorMailTypes.Models;
-using ErrorMailTypes.Services;
+using EmailTemplate.Models;
+using EmailTemplate.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ITemplateService, TemplateService>();
-builder.Services.AddDbContext<MailTypesContext>();
+builder.Services.AddDbContext<TemplateContext>();
 
 
 

@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace ErrorMailTypes.Models;
+namespace EmailTemplate.Models;
 
-public partial class MailTypesContext : DbContext
+public partial class TemplateContext : DbContext
 {
-    public MailTypesContext()
+    public TemplateContext()
     {
     }
 
-    public MailTypesContext(DbContextOptions<MailTypesContext> options)
+    public TemplateContext(DbContextOptions<TemplateContext> options)
         : base(options)
     {
     }
