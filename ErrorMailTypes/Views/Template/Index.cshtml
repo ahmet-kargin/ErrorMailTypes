@@ -1,5 +1,4 @@
-﻿@model EmailTemplate.Models.TemplateDto
-
+﻿@model EmailTemplate.Models.Template
 @{
     ViewData["Title"] = "Mail Add";
 }
@@ -69,11 +68,12 @@
         });
         $("#btnSave").click(function (e) {
             var templateId = $('#select option:selected').val();
+            var templateType = $('#select option:selected').text();
             var templateBody = tinymce.get("mytextarea").getContent();
             $.ajax({
                 type: "POST",
                 url: "@Url.Action("Save", "Template")",
-                data: { MailType: templateId, MailBody: templateBody },
+                data: { MailTypeId: templateId, MailType: templateType, MailBody: templateBody },
                 success: function (rslt) {
                     tinymce.get("mytextarea").getContent(rslt);
                 },

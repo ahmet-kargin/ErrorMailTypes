@@ -5,6 +5,6 @@ namespace EmailTemplate.Services
     public interface ITemplateService
     {
         string GetByType(int type);
-        TemplateDto Update(TemplateDto model);
+        Template Update(Template model);
     }
 }

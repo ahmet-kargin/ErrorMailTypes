@@ -5,6 +5,7 @@ namespace EmailTemplate.Services
     public class TemplateService : ITemplateService
     {
         private readonly TemplateContext _context;
+        Template selectedTemplate;
         public TemplateService( TemplateContext context)
         {
             _context = context;
@@ -13,28 +14,27 @@ namespace EmailTemplate.Services
         {
             if (type != null)
             {
-                Template selectedTemplate =_context.MailTypes.FirstOrDefault(t => t.MailTypeId == type);
+                selectedTemplate =_context.MailTypes.FirstOrDefault(t => t.MailTypeId == type);
                 return selectedTemplate.MailBody;
-
             }
             else 
                 return "";
         }
-        public TemplateDto Update(TemplateDto model)
+        public Template Update(Template model)
         {
             if (model.MailType == null)
                 return null;
 
             if (model.MailBody == null)
             {
-                Template selectedTemplate = _context.MailTypes.FirstOrDefault(x => x.MailTypeId.ToString() == model.MailType);
+                selectedTemplate = _context.MailTypes.FirstOrDefault(x => x.MailTypeId == model.MailTypeId);
                 selectedTemplate.MailBody = "<h3></h3>"; 
                 _context?.SaveChanges();
             }
             else
             {
                 string templateBody = model.MailBody;
-                var data = _context.MailTypes.FirstOrDefault(x => x.MailTypeId.ToString() == model.MailType);
+                var data = _context.MailTypes.FirstOrDefault(x => x.MailTypeId == model.MailTypeId);
                 data.MailBody = templateBody;
                 _context?.SaveChanges();
             }

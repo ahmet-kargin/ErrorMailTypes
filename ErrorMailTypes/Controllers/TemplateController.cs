@@ -20,7 +20,7 @@ namespace EmailTemplate.Controllers
         }
 
         [HttpPost]
-        public IActionResult Save(TemplateDto model)
+        public IActionResult Save(Template model)
         {
             try
             {
