@@ -18,7 +18,6 @@ namespace EmailTemplate.Controllers
             ViewBag.Template = _mailTypesContext.MailTypes.ToList();
             return View();
         }
-
         [HttpPost]
         public IActionResult Save(Template model)
         {
@@ -52,6 +51,5 @@ namespace EmailTemplate.Controllers
             }
             return Json("");
         }
-
     }
 }
