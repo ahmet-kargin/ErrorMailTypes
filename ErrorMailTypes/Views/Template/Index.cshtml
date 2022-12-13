@@ -12,7 +12,7 @@
         <div class="d-flex mt-3 col-4">
             <div class="form-group mb-3 flex-lg-row">
                 <select class="form-select" style="width:330px" id="select">
-                    <option value="" selected disabled>--Select Mail Template--</option>
+                    <option value="" selected disabled>--Select Template--</option>
                     @foreach (var item in ViewBag.Template)
                     {
                         <option value="@item.MailTypeId">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <textarea type="text" id="mytextarea" class=""></textarea>
+        <textarea type="text" id="mytextarea" class="" style="height:1500px"></textarea>
     </div>
 </div>
 <script>

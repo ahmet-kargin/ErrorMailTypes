@@ -22,9 +22,6 @@ namespace EmailTemplate.Services
         }
         public Template Update(Template model)
         {
-            if (model.MailType == null)
-                return null;
-
             if (model.MailBody == null)
             {
                 selectedTemplate = _context.MailTypes.FirstOrDefault(x => x.MailTypeId == model.MailTypeId);
