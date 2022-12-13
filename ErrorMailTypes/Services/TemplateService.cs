@@ -9,11 +9,11 @@ namespace EmailTemplate.Services
         {
             _context = context;
         }
-        public  string GetByType(string type)
+        public  string GetByType(int type)
         {
             if (type != null)
             {
-                Template selectedTemplate =_context.MailTypes.FirstOrDefault(t => t.MailType == type);
+                Template selectedTemplate =_context.MailTypes.FirstOrDefault(t => t.MailTypeId == type);
                 return selectedTemplate.MailBody;
 
             }
@@ -27,14 +27,14 @@ namespace EmailTemplate.Services
 
             if (model.MailBody == null)
             {
-                Template selectedTemplate = _context.MailTypes.FirstOrDefault(x => x.MailType == model.MailType);
+                Template selectedTemplate = _context.MailTypes.FirstOrDefault(x => x.MailTypeId.ToString() == model.MailType);
                 selectedTemplate.MailBody = "<h3></h3>"; 
                 _context?.SaveChanges();
             }
             else
             {
                 string templateBody = model.MailBody;
-                var data = _context.MailTypes.FirstOrDefault(x => x.MailType == model.MailType);
+                var data = _context.MailTypes.FirstOrDefault(x => x.MailTypeId.ToString() == model.MailType);
                 data.MailBody = templateBody;
                 _context?.SaveChanges();
             }

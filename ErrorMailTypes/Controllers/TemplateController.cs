@@ -36,7 +36,7 @@ namespace EmailTemplate.Controllers
             return RedirectToAction(nameof(TemplateController.Index));
         }
         [HttpPost]
-        public JsonResult Get(string data)
+        public JsonResult Get(int data)
         {
             try
             {
