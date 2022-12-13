@@ -31,8 +31,8 @@ namespace EmailTemplate.Services
             else
             {
                 string templateBody = model.MailBody;
-                var data = _context.MailTypes.FirstOrDefault(x => x.MailTypeId == model.MailTypeId);
-                data.MailBody = templateBody;
+                selectedTemplate = _context.MailTypes.FirstOrDefault(x => x.MailTypeId == model.MailTypeId);
+                selectedTemplate.MailBody = templateBody;
                 _context?.SaveChanges();
             }
             return model;

@@ -7,15 +7,15 @@ namespace EmailTemplate.Controllers
     public class TemplateController : Controller
     {
         private readonly ITemplateService _templateService;
-        private readonly TemplateContext _mailTypesContext;
-        public TemplateController(ITemplateService templateService, TemplateContext mailTypesContext)
+        private readonly TemplateContext _templateContext;
+        public TemplateController(ITemplateService templateService, TemplateContext templateContext)
         {
             _templateService = templateService;
-            _mailTypesContext = mailTypesContext;
+            _templateContext = templateContext;
         }
         public IActionResult Index()
         {
-            ViewBag.Template = _mailTypesContext.MailTypes.ToList();
+            ViewBag.Template = _templateContext.MailTypes.ToList();
             return View();
         }
         [HttpPost]
