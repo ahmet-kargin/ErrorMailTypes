@@ -13,7 +13,7 @@ public partial class TemplateContext : DbContext
     {
     }
 
-    public virtual DbSet<Template> MailTypes { get; set; }
+    public virtual DbSet<Template> Templates { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("name=ConnectionStrings:Connection");

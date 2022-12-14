@@ -15,7 +15,7 @@ namespace EmailTemplate.Controllers
         }
         public IActionResult Index()
         {
-            ViewBag.Template = _templateContext.MailTypes.ToList();
+            ViewBag.Template = _templateContext.Templates.ToList();
             return View();
         }
         [HttpPost]

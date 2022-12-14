@@ -14,7 +14,7 @@ namespace EmailTemplate.Services
         {
             if (type != null)
             {
-                selectedTemplate =_context.MailTypes.FirstOrDefault(t => t.MailTypeId == type);
+                selectedTemplate =_context.Templates.FirstOrDefault(t => t.MailTypeId == type);
                 return selectedTemplate.MailBody;
             }
             else 
@@ -24,15 +24,14 @@ namespace EmailTemplate.Services
         {
             if (model.MailBody == null)
             {
-                selectedTemplate = _context.MailTypes.FirstOrDefault(x => x.MailTypeId == model.MailTypeId);
+                selectedTemplate = _context.Templates.FirstOrDefault(x => x.MailTypeId == model.MailTypeId);
                 selectedTemplate.MailBody = "<h3></h3>"; 
                 _context?.SaveChanges();
             }
             else
             {
-                string templateBody = model.MailBody;
-                selectedTemplate = _context.MailTypes.FirstOrDefault(x => x.MailTypeId == model.MailTypeId);
-                selectedTemplate.MailBody = templateBody;
+                selectedTemplate = _context.Templates.FirstOrDefault(x => x.MailTypeId == model.MailTypeId);
+                selectedTemplate.MailBody = model.MailBody;
                 _context?.SaveChanges();
             }
             return model;
