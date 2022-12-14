@@ -34,3 +34,5 @@ app.MapControllerRoute(
     pattern: "{controller=Template}/{action=Index}/{id?}");
 
 app.Run();
+
+//Test
