@@ -14,10 +14,7 @@ public partial class TemplateContext : DbContext
     }
 
     public virtual DbSet<Template> Templates { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("name=ConnectionStrings:Connection");
-
+       
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Template>(entity =>

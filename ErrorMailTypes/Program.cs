@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ITemplateService, TemplateService>();
-builder.Services.AddDbContext<TemplateContext>();
+builder.Services.AddDbContext<TemplateContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 
 
 
